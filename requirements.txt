@@ -1,0 +1,11 @@
+# Tested with Python 3.12.3
+qiskit>=1.0            # tested: 2.6.2
+qiskit-aer>=0.14       # tested: 0.18.2
+numpy                  # tested: 2.5.4
+scipy                  # tested: 1.18.1
+pytest                 # tested: 9.2.0
+
+# Optional -- only for algorithm_lab/ (real-chemistry VQE adapters). Without them those
+# tests SKIP (reported as skipped, never as passed).
+pyscf                  # tested: 2.15.1
+qiskit-nature          # tested: 0.8.0
