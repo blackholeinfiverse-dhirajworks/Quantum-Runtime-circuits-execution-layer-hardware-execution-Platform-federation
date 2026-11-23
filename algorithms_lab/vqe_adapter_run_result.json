@@ -1,0 +1,178 @@
+{
+  "engine_event_version": "vqe-adapter-lab-v1",
+  "timestamp_utc": "2026-10-24T09:38:12.537011+00:00",
+  "adapter_registry_status": {
+    "toy_ising_tfim": {
+      "available": true,
+      "reason": "pure numpy/qiskit \u2014 no external dependencies"
+    },
+    "pyscf_molecular": {
+      "available": true,
+      "reason": "pyscf 2.14.0, qiskit_nature 0.8.0"
+    },
+    "pyscf_o2_corrosion_relevant": {
+      "available": true,
+      "reason": "pyscf 2.14.0, qiskit_nature 0.8.0"
+    }
+  },
+  "results": {
+    "pyscf_molecular": {
+      "adapter": "pyscf_molecular",
+      "status": "SUCCESS",
+      "availability": {
+        "available": true,
+        "reason": "pyscf 2.14.0, qiskit_nature 0.8.0"
+      },
+      "hamiltonian_build_ms": 1703.6,
+      "hamiltonian_metadata": {
+        "atom": "H 0 0 0; H 0 0 0.735",
+        "basis": "sto-3g",
+        "spin": 0,
+        "charge": 0,
+        "num_particles": [
+          1,
+          1
+        ],
+        "num_spatial_orbitals": 2,
+        "nuclear_repulsion_energy": 0.7199689944489797,
+        "all_constants": {
+          "nuclear_repulsion_energy": 0.7199689944489797
+        },
+        "total_constant_offset": 0.7199689944489797,
+        "active_space_applied": false,
+        "active_electrons": null,
+        "active_orbitals": null,
+        "mapper": "JordanWignerMapper",
+        "domain_note": "REAL ab-initio molecular Hamiltonian via PySCF"
+      },
+      "num_qubits": 4,
+      "ansatz": "UCCSD (chemistry-aware, qiskit-nature), 3 parameters",
+      "optimizer": {
+        "method": "COBYLA",
+        "seed": 42,
+        "iterations_run": 43,
+        "train_ms": 1015.95
+      },
+      "exact_baseline": {
+        "method": "exact diagonalisation (numpy.linalg.eigvalsh)",
+        "electronic_ground_energy": -1.85727503,
+        "nuclear_repulsion_energy": 0.71996899,
+        "total_ground_energy": -1.13730604,
+        "spectral_gap": 0.60093596
+      },
+      "vqe_result": {
+        "electronic_energy": -1.85727503,
+        "constant_offset": 0.71996899,
+        "total_energy": -1.13730603
+      },
+      "comparison": {
+        "absolute_error_hartree_or_units": 0.0,
+        "relative_error_pct": 0.0,
+        "within_spectral_gap": true
+      }
+    },
+    "pyscf_o2_corrosion_relevant": {
+      "adapter": "pyscf_o2_corrosion_relevant",
+      "status": "SUCCESS",
+      "availability": {
+        "available": true,
+        "reason": "pyscf 2.14.0, qiskit_nature 0.8.0"
+      },
+      "hamiltonian_build_ms": 266.089,
+      "hamiltonian_metadata": {
+        "atom": "O 0 0 0; O 0 0 1.208",
+        "basis": "sto-3g",
+        "spin": 2,
+        "charge": 0,
+        "num_particles": [
+          3,
+          1
+        ],
+        "num_spatial_orbitals": 4,
+        "nuclear_repulsion_energy": 28.035878724238415,
+        "all_constants": {
+          "nuclear_repulsion_energy": 28.035878724238415,
+          "ActiveSpaceTransformer": -170.29316852258387
+        },
+        "total_constant_offset": -142.25728979834545,
+        "active_space_applied": true,
+        "active_electrons": 4,
+        "active_orbitals": 4,
+        "mapper": "JordanWignerMapper",
+        "domain_note": "REAL ab-initio molecular Hamiltonian via PySCF"
+      },
+      "num_qubits": 8,
+      "ansatz": "UCCSD (chemistry-aware, qiskit-nature), 15 parameters",
+      "optimizer": {
+        "method": "COBYLA",
+        "seed": 42,
+        "iterations_run": 300,
+        "train_ms": 261232.704
+      },
+      "exact_baseline": {
+        "method": "exact diagonalisation (numpy.linalg.eigvalsh)",
+        "electronic_ground_energy": -5.3830873,
+        "nuclear_repulsion_energy": 28.03587872,
+        "total_ground_energy": -147.6403771,
+        "spectral_gap": 0.0074455
+      },
+      "vqe_result": {
+        "electronic_energy": -5.37564175,
+        "constant_offset": -142.2572898,
+        "total_energy": -147.63293154
+      },
+      "comparison": {
+        "absolute_error_hartree_or_units": 0.00744556,
+        "relative_error_pct": 0.005043,
+        "within_spectral_gap": false
+      }
+    },
+    "toy_ising_tfim": {
+      "adapter": "toy_ising_tfim",
+      "status": "SUCCESS",
+      "availability": {
+        "available": true,
+        "reason": "pure numpy/qiskit \u2014 no external dependencies"
+      },
+      "hamiltonian_build_ms": 0.215,
+      "hamiltonian_metadata": {
+        "model": "transverse-field Ising, periodic",
+        "J": 1.0,
+        "h": 0.5,
+        "domain_note": "toy lattice model \u2014 NOT a real molecule"
+      },
+      "num_qubits": 4,
+      "ansatz": "hardware-efficient (RY+CZ), 16 parameters",
+      "optimizer": {
+        "method": "COBYLA",
+        "seed": 42,
+        "iterations_run": 300,
+        "train_ms": 987.401
+      },
+      "exact_baseline": {
+        "method": "exact diagonalisation (numpy.linalg.eigvalsh)",
+        "electronic_ground_energy": -4.27155841,
+        "nuclear_repulsion_energy": 0.0,
+        "total_ground_energy": -4.27155841,
+        "spectral_gap": 0.03549043
+      },
+      "vqe_result": {
+        "electronic_energy": -4.23663685,
+        "constant_offset": 0.0,
+        "total_energy": -4.23663685
+      },
+      "comparison": {
+        "absolute_error_hartree_or_units": 0.03492156,
+        "relative_error_pct": 0.817537,
+        "within_spectral_gap": true
+      }
+    }
+  },
+  "limitations": [
+    "pyscf_molecular currently runs H2 (STO-3G, bond length 0.735 \u00c5) end to end \u2014 this is a REAL ab-initio molecule, not the real corrosion CAS(10,8) system. H2 proved the pipeline correct before pointing it at a harder system (O2) and eventually a much larger, transition-metal-containing one.",
+    "pyscf_o2_corrosion_relevant's VQE error sits essentially exactly at its spectral gap boundary after optimisation improvements (see comparison.within_spectral_gap) \u2014 reported as a near-miss, not rounded into a false 'converged' claim.",
+    "Active-space reduction (ActiveSpaceTransformer) is exercised for O2 (4 electrons / 4 orbitals -> 8 qubits); scaling to a larger, transition-metal corrosion-relevant molecule is the next real step, not done here.",
+    "No quantum advantage claimed: every Hamiltonian here is solved exactly by classical diagonalisation inside this very script to produce the baseline the VQE result is checked against.",
+    "toy_ising_tfim uses a random-start hardware-efficient ansatz (unchanged); only the two PySCF/UCCSD adapters use the Hartree-Fock zero-start (F-08 fix) \u2014 appropriate per-ansatz, not applied uniformly without reason."
+  ]
+}
